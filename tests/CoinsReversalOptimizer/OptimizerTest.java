@@ -1,3 +1,5 @@
+package CoinsReversalOptimizer;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,17 +8,15 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
-import static org.junit.Assert.*;
-
 @RunWith(Parameterized.class)
-public class CoinsSpinnerTest
+public class OptimizerTest
 {
     private int[] input;
     private int expected;
 
-    private CoinsSpinner coinsSpinner = new CoinsSpinner();
+    private Optimizer optimizer = new Optimizer();
 
-    public CoinsSpinnerTest(int[] input, int expected)
+    public OptimizerTest(int[] input, int expected)
     {
         this.input = input;
         this.expected = expected;
@@ -38,19 +38,7 @@ public class CoinsSpinnerTest
     @Test
     public void solution_correctData_shouldPass()
     {
-        int actual = coinsSpinner.solution(this.input);
+        int actual = optimizer.optimize(this.input);
         Assert.assertEquals(this.expected, actual);
     }
-
-    /*
-
-     wygląda na to że testy muszą być w odseparowanych klasach
-    @Test(expected = AssertionError.class)
-    public void solution_wrongData_shouldThrowAssert()
-    {
-        int[] data = new int[]{1, 0, 8, 0};
-        coinsSpinner.solution(data);
-    }
-
-    */
 }

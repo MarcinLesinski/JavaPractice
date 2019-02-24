@@ -1,3 +1,6 @@
+package SqrtAnalyzer;
+
+import SqrtAnalyzer.Analyzer;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,14 +10,14 @@ import java.util.Arrays;
 import java.util.List;
 
 @RunWith(Parameterized.class)
-public class SquaresAnalyzerTest
+public class AnalyzerTest
 {
     private Integer to;
     private Integer from;
     private Integer expected;
-    private SquaresAnalyzer squaresAnalyzer = new SquaresAnalyzer();
+    private Analyzer analyzer = new Analyzer();
 
-    public SquaresAnalyzerTest(Integer from, Integer to, Integer expected)
+    public AnalyzerTest(Integer from, Integer to, Integer expected)
     {
         this.to = to;
         this.from = from;
@@ -35,7 +38,7 @@ public class SquaresAnalyzerTest
     @Test
     public void solution()
     {
-        Integer actual = squaresAnalyzer.soulution(this.from, this.to);
+        Integer actual = analyzer.analyze(this.from, this.to);
         Assert.assertEquals(this.expected, actual);
     }
 }

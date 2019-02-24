@@ -1,3 +1,6 @@
+package CellsDistance;
+
+import CellsDistance.Analyzer;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,16 +9,14 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
-import static org.junit.Assert.*;
-
 @RunWith(Parameterized.class)
-public class PairsAnalyzerTest
+public class AnalyzerTest
 {
     private int[] input;
     private Integer expected;
-    private PairsAnalyzer pairsAnalyzer = new PairsAnalyzer();
+    private Analyzer analyzer = new Analyzer();
 
-    public PairsAnalyzerTest(int[] input, Integer expected)
+    public AnalyzerTest(int[] input, Integer expected)
     {
         this.input = input;
         this.expected = expected;
@@ -35,7 +36,7 @@ public class PairsAnalyzerTest
     @Test
     public void soulution()
     {
-        Integer actual = pairsAnalyzer.soulution(this.input);
+        Integer actual = analyzer.analyze(this.input);
         Assert.assertEquals(this.expected, actual);
     }
 }
